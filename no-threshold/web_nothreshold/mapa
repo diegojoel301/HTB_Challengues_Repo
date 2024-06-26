@@ -1,0 +1,20 @@
+127.0.0.1:1337 ---------------> 127.0.0.1:8888
+   frontend                        backend
+HTTP Request Smuggling
+                           sql injection login bypass
+				      |
+				      |
+				      v
+				 set_2fa_code(4)
+				      |
+				      |
+				      v
+				  /verify-2fa (GET, POST)
+
+
+
+def set_2fa_code(d):
+    uwsgi.cache_del("2fa-code")
+    uwsgi.cache_set(
+        "2fa-code", "".join(random.choices(string.digits, k=d)), 300 # valid for 5 min
+    ) 

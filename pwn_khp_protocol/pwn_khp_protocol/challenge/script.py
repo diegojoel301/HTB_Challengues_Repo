@@ -63,7 +63,7 @@ io.sendline("EXEC")
 #io.recvrepeat(1)
 #io.sendline("RLDB")
 #io.recvrepeat(1)
-#io.sendline("REKE sexo:admin password")
+#io.sendline("REKE haha:admin password")
 #io.recvrepeat(1)
 #io.sendline("AUTH 2")
 

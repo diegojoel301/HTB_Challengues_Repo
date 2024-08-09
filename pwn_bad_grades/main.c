@@ -1,17 +1,15 @@
-#include<stdio.h>
+#include <stdio.h>
+#include <string.h>
 
-int main()
-{
-  double vector[3];
+int main() {
+    // Valor hexadecimal para 1.0 en double: 0x3ff0000000000000
+    unsigned char hex_bytes[] = {0x63, 0x12, 0x40, 0x00, 0x00, 0x00, 0x00, 0x00}; // Little-endian order
+    double x;
 
-  double promedio = 0.0;
+    memcpy(&x, hex_bytes, sizeof(double));
 
-  for (int i = 0; i < 1; i++)
-  {
-    scanf("%lf", vector + i);
-    promedio += vector[i];  
-  }
-  printf("%.2f\n", promedio);
+    printf("El valor de x en decimal es: %f\n", x);
+
+    return 0;
 }
-
 

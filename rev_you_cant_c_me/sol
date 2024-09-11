@@ -1,0 +1,29 @@
+Para saber tu main:
+
+❯ r2 auth
+WARN: Relocs has not been applied. Please use `-e bin.relocs.apply=true` or `-e bin.cache=true` next time
+[0x00401070]> aa
+INFO: Analyze all flags starting with sym. and entry0 (aa)
+INFO: Analyze imports (af@@@i)
+INFO: Analyze entrypoint (af@ entry0)
+INFO: Analyze symbols (af@@@s)
+INFO: Recovering variables
+INFO: Analyze all functions arguments/locals (afva@@@F)
+[0x00401070]> afl
+0x00401030    1      6 sym.imp.printf
+0x00401040    1      6 sym.imp.fgets
+0x00401050    1      6 sym.imp.strcmp
+0x00401060    1      6 sym.imp.malloc
+0x00401070    1     46 entry0
+0x00401160    7    297 main (*)
+0x00401150    5     55 entry.init0
+0x00401120    3     32 entry.fini0
+0x004010b0    4     31 fcn.004010b0
+[0x00401070]> exit
+
+❯ echo "this_is_the_password" | ./auth
+Welcome!
+I said, you can't c me!
+❯ echo 'wh00ps!_y0u_d1d_c_m3' | ./auth
+Welcome!
+HTB{wh00ps!_y0u_d1d_c_m3}

@@ -1,32 +1,30 @@
-from pwn import *
-import string
+def binary_v(x):
+    v = [0 for i in range(8)]
 
-def output(string):
-    io = process("./chall")
-    
-    io.sendline(string.encode())
+    for i in range(0, 8):
+        v[i] = x % 2
+        x //= 2
 
-    salida = "9W8TL"
+    return [str(elem) for elem in v[::-1]]
 
-    io.recvuntil("9W8TL")
-    salida += io.recvline().strip().decode()
+def devuelve_param_1(caracter):
+    #caracteres = [0x52, 0x53, 0x54, 0x55, 0x56, 0x57, 0x58, 0x59, 0x5a, 0x30, 0x31, 0x32, 0x33, 0x34, 0x35, 0x36, 0x37, 0x38, 0x39, 0x41, 0x42, 0x43, 0x44, 0x45, 0x46, 0x47, 0x48, 0x49, 0x4a, 0x4b, 0x4c, 0x4d, 0x4e, 0x4f, 0x50, 0x51, 0x61, 0x62, 0x63, 0x64, 0x65, 0x66, 0x67, 0x68, 0x69, 0x6a, 0x6b, 0x6c, 0x6d, 0x6e, 0x6f, 0x70, 0x71, 0x72, 0x73, 0x74, 0x75, 0x76, 0x77, 0x79, 0x7a]
+    caracteres = "RSTUVWXYZ0123456789ABCDEFGHIJKLMNOPQabcdefghijklmnopqrstuvwxyz"
+    caracteres = [ord(elem) for elem in caracteres]
+    return caracteres.index(ord(caracter))
 
-    io.close()
+#encrypted_string = "FDWOFDWOFDWPFDWOFDWOFD4OFDWOFDWOGXWO"
 
-    return salida
+encrypted_string = "9W8TLp4k7t0vJW7n3VvMCpWq9WzT3C8pZ9Wz"
 
-#force_brute_v = [5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 32, 33, 34, 35]
+#encrypted_string = "HXziFCzQIsrlEp4pKU8pEsNmLCzm4YSrKECr"
 
-initial_flag = "HTB{I_4M_R3v3rse_EnG1ne3eR}"
-flag_encoded = "9W8TLp4k7t0vJW7n3VvMCpWq9WzT3C8pZ9Wz"
+v_binaryzed = str()
 
-i = 4
+for elem in encrypted_string:
+    v_binaryzed += ''.join([str(x) for x in binary_v(devuelve_param_1(elem))[2::]])
 
-#for elem in force_brute_v:
-if True:
-    ascii_i = 0
-    v_ascii = string.ascii_letters + string.digits
-    while output(initial_flag)[5] != flag_encoded[5]:
-        initial_flag = initial_flag[:i] + v_ascii[i] + initial_flag[(i+1):]
-        ascii_i += 1
-    print(initial_flag)
+for i in range(0, len(v_binaryzed)//8):
+    #print(v_binaryzed[i::(i+8)])
+    print(chr(int(v_binaryzed[i*8:(i*8 + 8)], 2)), end="")
+

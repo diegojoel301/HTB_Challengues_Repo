@@ -1,0 +1,188 @@
+body {
+    color: #1c1f33;
+}
+#main-container {
+    margin-top: 15vh;
+}
+
+#resp-msg, .hidden {
+     display: none;
+     margin-top: 2rem;
+}
+ .alert {
+     position: relative;
+     padding: .50rem 1.25rem;
+     margin-bottom: 1rem;
+     border: 1px solid transparent;
+     border-radius: .25rem;
+}
+
+.active {
+    /*! background-color : #a7b0b0; */
+    color: #000 !important;
+}
+
+.card {
+    background: none;
+    border: none !important;
+}
+
+.ancient-card {
+    position: relative !important; 
+    background: url(/static/images/card-body.png) repeat;
+    background-size: contain;
+}
+
+.ancient-card::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background: url(/static/images/card-top.png) no-repeat;
+    background-size: contain;
+}
+
+.ancient-card::after {
+    content: '';
+    position: absolute;
+    bottom: -50px;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background: url(/static/images/card-btm.png) no-repeat;
+    background-size: contain;
+}
+
+.ancient-card-header {
+        padding: .5rem 1rem;
+        margin-bottom: 0;
+}
+
+.ancient-card-footer {
+	padding: .5rem 1rem;
+}
+
+
+.nav-container {
+    position: relative;
+    margin-top: 100px;
+    margin-bottom: 50px;
+    
+}
+
+.nav-line {
+    position: relative;
+    background: #a48365;
+    position: relative;
+    border-radius: 10px;
+}
+
+#logo {
+    position: absolute;
+    top: -75px;
+    left: -50px;;
+    animation-name: rotate;
+    animation-duration: 65s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+
+.actual-navbar {
+    margin-left: 120px;
+}
+
+.small-help, .mid-help {
+    font-weight: lighter;
+    color : #888275;
+    font-size: 13px;
+    padding: 0px 15px;
+    width: 90%;
+}
+.mid-help {
+    font-weight: lighter;
+    color : #888275;
+    font-size: 13px;
+    padding: 0px 15px;
+    width: 90%;
+}
+.mid-help {
+    font-size: 15px;
+}
+
+.trx { 
+    height: 477px !important;
+}
+
+.upload-area {
+    position: relative;
+}
+
+#verificationDoc {
+  position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   cursor: pointer;
+   opacity: 0;
+}
+
+.progress {
+    background-color: #99a5a9 !important;
+}
+
+.progress-bar {
+    background-color: #735f53 !important;
+}
+
+#loading-container {
+    display: none;
+}
+
+
+@media screen and (max-width: 1200px) {
+    .trx {
+        height: 492px !important;
+    }
+}
+@media screen and (min-width: 1200px) {
+    .updoc-card::before {
+        top: -10px !important;
+    }
+}
+
+@keyframes rotate{
+    from{ transform: rotate(-360deg); }
+    to{ transform: rotate(360deg); }
+}
+
+.card a {
+	color: #935215 !important;
+	text-decoration: underline;
+}
+a:hover {
+	color: #000 !important;
+	text-decoration: underline;
+}
+
+
+#login-btn, #register-btn, .alert-danger {
+    background: #1c1f33;
+    border-color: #1c1f33;
+    color: #fff;
+    font-weight: bold;
+    font-size: 16px;
+
+}
+
+#login-btn, #register-btn {
+    margin-top: 10px;
+}
+
+#username, #password {
+    height: 55px;
+    font-size: 18px;
+}

@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>The Magic Informer | Administration</title>
+        <meta name="author" content="rayhan0x01">
+        <link rel="stylesheet" href="/static/vendors/feather/feather.css">
+        <link rel="stylesheet" href="/static/vendors/mdi/css/materialdesignicons.min.css">
+        <link rel="stylesheet" href="/static/vendors/typicons/typicons.css">
+        <link rel="stylesheet" href="/static/vendors/css/vendor.bundle.base.css">
+        <link rel="stylesheet" href="/static/js/select.dataTables.min.css">
+        <link rel="stylesheet" href="/static/css/vertical-layout-light/style.css">
+        <link rel="stylesheet" href="/static/css/custom.css">
+        <link rel="stylesheet" href="/static/css/dashboard.css">
+        <link rel="shortcut icon" href="/static/images/logo.png" />
+    </head>
+    <body>
+        <div class="container">
+            <nav class="navbar default-layout col-lg-12 col-12 p-0 fixed-top d-flex align-items-top flex-row">
+                <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-start">
+                    <div>
+                        <a class="navbar-brand brand-logo" href="/dashboard">
+                            <p class="logo-text">The Magic Informer</p>
+                        </a>
+                        <a class="navbar-brand brand-logo-mini" href="/dashboard">
+                        <img src="/static/images/logo.png" alt="logo" />
+                        </a>
+                    </div>
+                </div>
+                <div class="navbar-menu-wrapper d-flex align-items-top">
+                    <ul class="navbar-nav">
+                        <li class="nav-item font-weight-semibold d-none d-lg-block ms-0">
+                            <h1 class="welcome-text">Welcome back, <span class="text-black fw-bold">{{ user.username }}</span></h1>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item dropdown d-none d-lg-block user-dropdown">
+                            <a class="nav-link" id="UserDropdown" href="#" data-bs-toggle="dropdown" aria-expanded="false">
+                            <img class="img-xs rounded-circle" src="/static/images/logo.png" alt="Profile image"> </a>
+                            <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
+                                <div class="dropdown-header text-center">
+                                    <img class="img-md rounded-circle" src="/static/images/logo.png" alt="Profile image">
+                                    <p class="mb-1 mt-3 font-weight-semibold">Admin</p>
+                                </div>
+                                <a class="dropdown-item" href="/logout"><i class="dropdown-item-icon mdi mdi-power text-primary me-2"></i>Sign Out</a>
+                            </div>
+                        </li>
+                    </ul>
+                    <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-bs-toggle="offcanvas">
+                    <span class="mdi mdi-menu"></span>
+                    </button>
+                </div>
+            </nav>
+            <div class="container-fluid page-body-wrapper">
+                <div class="theme-setting-wrapper">
+                    <div id="settings-trigger" style="display:none"><i class="ti-settings"></i></div>
+                    <div id="theme-settings" class="settings-panel">
+                        <i class="settings-close ti-close"></i>
+                        <p class="settings-heading">SIDEBAR SKINS</p>
+                        <div class="sidebar-bg-options selected" id="sidebar-light-theme">
+                            <div class="img-ss rounded-circle bg-light border me-3"></div>
+                            Light
+                        </div>
+                        <div class="sidebar-bg-options" id="sidebar-dark-theme">
+                            <div class="img-ss rounded-circle bg-dark border me-3"></div>
+                            Dark
+                        </div>
+                        <p class="settings-heading mt-2">HEADER SKINS</p>
+                        <div class="color-tiles mx-0 px-4">
+                            <div class="tiles success"></div>
+                            <div class="tiles warning"></div>
+                            <div class="tiles danger"></div>
+                            <div class="tiles info"></div>
+                            <div class="tiles dark"></div>
+                            <div class="tiles default"></div>
+                        </div>
+                    </div>
+                </div>
+                <nav class="sidebar sidebar-offcanvas pt-5" id="sidebar">
+                    <ul class="nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                            <i class="mdi mdi-grid-large menu-icon"></i>
+                            <span class="menu-title">Dashboard</span>
+                            </a>
+                        </li>
+                        <li class="nav-item nav-category">Users Management</li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                            <i class="menu-icon mdi mdi-floor-plan"></i>
+                            <span class="menu-title">News Editors</span>
+                            <i class="menu-arrow"></i> 
+                            </a>
+                        </li>
+                        <li class="nav-item nav-category">News Management</li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                            <i class="menu-icon mdi mdi-table-large-plus"></i>
+                            <span class="menu-title">Add Article</span>
+                            <i class="menu-arrow"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                            <i class="menu-icon mdi mdi-table-edit"></i>
+                            <span class="menu-title">Update Articles</span>
+                            <i class="menu-arrow"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item nav-category">Site Utilities</li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/sms-settings">
+                            <i class="menu-icon mdi mdi-cellphone-message"></i>
+                            <span class="menu-title">SMS Gateway</span>
+                            <i class="menu-arrow"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/sql-prompt">
+                            <i class="menu-icon mdi mdi-application"></i>
+                            <span class="menu-title">SQL Prompt</span>
+                            <i class="menu-arrow"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item nav-category">Settings</li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                            <i class="menu-icon mdi mdi-settings"></i>
+                            <span class="menu-title">Site Settings</span>
+                            <i class="menu-arrow"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="main-panel">
+                    <div class="content-wrapper">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="home-tab">
+                                    <div class="d-sm-flex align-items-center justify-content-between border-bottom">
+                                        <ul class="nav nav-tabs" role="tablist">
+                                            <li class="nav-item">
+                                                <a class="nav-link active ps-0" id="home-tab" data-bs-toggle="tab" href="#overview" role="tab" aria-controls="overview" aria-selected="true">Overview</a>
+                                            </li>
+                                        </ul>
+                                        <div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-content tab-content-basic">
+                                        <div class="tab-pane fade show active" id="overview" role="tabpanel" aria-labelledby="overview">
+                                            <div class="row">
+                                                <div class="col-sm-12">
+                                                    <div class="statistics-details d-flex align-items-center justify-content-between">
+                                                        <div>
+                                                            <p class="statistics-title">Bounce Rate</p>
+                                                            <h3 class="rate-percentage">32.53%</h3>
+                                                            <p class="text-danger d-flex"><i class="mdi mdi-menu-down"></i><span>-0.5%</span></p>
+                                                        </div>
+                                                        <div>
+                                                            <p class="statistics-title">Page Views</p>
+                                                            <h3 class="rate-percentage">1337,682</h3>
+                                                            <p class="text-success d-flex"><i class="mdi mdi-menu-up"></i><span>+5.3%</span></p>
+                                                        </div>
+                                                        <div>
+                                                            <p class="statistics-title">New Sessions</p>
+                                                            <h3 class="rate-percentage">56685</h3>
+                                                            <p class="text-danger d-flex"><i class="mdi mdi-menu-down"></i><span>168.8</span></p>
+                                                        </div>
+                                                        <div class="d-none d-md-block">
+                                                            <p class="statistics-title">Avg. Time per article</p>
+                                                            <h3 class="rate-percentage">1m:35s</h3>
+                                                            <p class="text-success d-flex"><i class="mdi mdi-menu-down"></i><span>+0.8%</span></p>
+                                                        </div>
+                                                        <div class="d-none d-md-block">
+                                                            <p class="statistics-title">New Sessions</p>
+                                                            <h3 class="rate-percentage">56683</h3>
+                                                            <p class="text-danger d-flex"><i class="mdi mdi-menu-down"></i><span>48.6</span></p>
+                                                        </div>
+                                                        <div class="d-none d-md-block">
+                                                            <p class="statistics-title">Avg. Time overtime</p>
+                                                            <h3 class="rate-percentage">1m:35s</h3>
+                                                            <p class="text-success d-flex"><i class="mdi mdi-menu-down"></i><span>+0.8%</span></p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-lg-6 col-lg-6 grid-margin stretch-card">
+                                                    <div class="card card-rounded">
+                                                        <div class="card-body pb-0">
+                                                            <h4 class="card-title card-title-dash text-white mb-4">Traffic Summary</h4>
+                                                            <div class="row">
+                                                                <div class="col-sm-4">
+                                                                    <p class="text-white mb-1">Total Visitors</p>
+                                                                    <h2 class="text-info text-white">94357</h2>
+                                                                </div>
+                                                                <div class="col-sm-8">
+                                                                    <div class="status-summary-chart-wrapper pb-4">
+                                                                        <canvas id="status-summary"></canvas>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-6 col-lg-6 grid-margin stretch-card">
+                                                    <div class="card card-rounded">
+                                                        <div class="card-body">
+                                                            <div class="row">
+                                                                <div class="col-sm-6">
+                                                                    <div class="d-flex justify-content-between align-items-center mb-2 mb-sm-0">
+                                                                        <div class="circle-progress-width">
+                                                                            <div id="totalVisitors" class="progressbar-js-circle pr-2"></div>
+                                                                        </div>
+                                                                        <div>
+                                                                            <p class="text-small text-white mb-2">Active Visitors</p>
+                                                                            <h4 class="mb-0 fw-bold text-white">26.80%</h4>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-sm-6">
+                                                                    <div class="d-flex justify-content-between align-items-center">
+                                                                        <div class="circle-progress-width">
+                                                                            <div id="visitperday" class="progressbar-js-circle pr-2"></div>
+                                                                        </div>
+                                                                        <div>
+                                                                            <p class="text-small text-white mb-2">Visits per day</p>
+                                                                            <h4 class="mb-0 fw-bold text-white">19065</h4>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6 col-lg-12 grid-margin stretch-card">
+                                                </div>
+                                                <div class="col-md-6 col-lg-12 grid-margin stretch-card">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <footer class="footer">
+                        <div class="d-sm-flex justify-content-center justify-content-sm-between">
+                            <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">
+                                Copyright © <script>document.write(new Date().toLocaleDateString().split('/')[2])</script>. The Magic Informer.
+                            </span>
+                        </div>
+                    </footer>
+                </div>
+            </div>
+        </div>
+        <script src="/static/vendors/js/vendor.bundle.base.js"></script>
+        <script src="/static/vendors/chart.js/Chart.min.js"></script>
+        <script src="/static/vendors/progressbar.js/progressbar.min.js"></script>
+        <script src="/static/js/dashboard.js"></script>
+    </body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>The Magic Informer | Editor Login</title>
+        <meta name="author" content="rayhan0x01">
+        <link rel="stylesheet" href="/static/css/vertical-layout-light/style.css">
+        <link rel="stylesheet" href="/static/css/custom.css">
+        <link rel="stylesheet" href="/static/css/login.css">
+        <link rel="shortcut icon" href="/static/images/logo.png" />
+    </head>
+    <body>
+        <div class="container" id="main-container">
+            <div class="row">
+                <div class="card ancient-card border-light mx-auto col-lg-5">
+                    <h4 class="ancient-card-header text-center mt-3">Editor Login</h4>
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label for="username" class="form-label fw-bold">Username</label>
+                            <input type="text" class="form-control" id="username" placeholder="Enter username">
+                        </div>
+                        <div class="form-group mt-2">
+                            <label for="password" class="form-label fw-bold">Password</label>
+                            <input type="password" class="form-control" id="password" placeholder="Enter password">
+                        </div>
+                        <div class="form-group mt-3 mb-2">
+                            <button type="button" id="login-btn" class="btn btn-success w-100">Login</button>
+                        </div>
+                        <p id="resp-msg" class="alert alert-info">Please wait...</p>
+                    </div>
+                    <div class="ancient-card-footer text-center">Don't have an account? <a href="/register">Create one!</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="/static/vendors/js/vendor.bundle.base.js"></script>
+        <script src="/static/js/auth.js"></script>
+    </body>
+</html>

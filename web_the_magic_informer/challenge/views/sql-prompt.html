@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>The Magic Informer | SQL Prompt</title>
+        <meta name="author" content="rayhan0x01">
+        <link rel="stylesheet" href="/static/vendors/feather/feather.css">
+        <link rel="stylesheet" href="/static/vendors/mdi/css/materialdesignicons.min.css">
+        <link rel="stylesheet" href="/static/vendors/typicons/typicons.css">
+        <link rel="stylesheet" href="/static/vendors/css/vendor.bundle.base.css">
+        <link rel="stylesheet" href="/static/js/select.dataTables.min.css">
+        <link rel="stylesheet" href="/static/css/vertical-layout-light/style.css">
+        <link rel="stylesheet" href="/static/css/custom.css">
+        <link rel="stylesheet" href="/static/css/dashboard.css">
+        <link rel="shortcut icon" href="/static/images/logo.png" />
+    </head>
+    <body>
+        <div class="container-scroller">
+            <nav class="navbar default-layout col-lg-12 col-12 p-0 fixed-top d-flex align-items-top flex-row">
+                <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-start">
+                    <div>
+                        <a class="navbar-brand brand-logo" href="/dashboard">
+                            <p class="logo-text">The Magic Informer</p>
+                        </a>
+                        <a class="navbar-brand brand-logo-mini" href="/dashboard">
+                        <img src="/static/images/logo.png" alt="logo" />
+                        </a>
+                    </div>
+                </div>
+                <div class="navbar-menu-wrapper d-flex align-items-top">
+                    <ul class="navbar-nav">
+                        <li class="nav-item font-weight-semibold d-none d-lg-block ms-0">
+                            <h1 class="welcome-text">Welcome back, <span class="text-black fw-bold">Admin</span></h1>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item dropdown d-none d-lg-block user-dropdown">
+                            <a class="nav-link" id="UserDropdown" href="#" data-bs-toggle="dropdown" aria-expanded="false">
+                            <img class="img-xs rounded-circle" src="/static/images/logo.png" alt="Profile image"> </a>
+                            <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
+                                <div class="dropdown-header text-center">
+                                    <img class="img-md rounded-circle" src="/static/images/logo.png" alt="Profile image">
+                                    <p class="mb-1 mt-3 font-weight-semibold">Admin</p>
+                                </div>
+                                <a class="dropdown-item" href="/logout"><i class="dropdown-item-icon mdi mdi-power text-primary me-2"></i>Sign Out</a>
+                            </div>
+                        </li>
+                    </ul>
+                    <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-bs-toggle="offcanvas">
+                    <span class="mdi mdi-menu"></span>
+                    </button>
+                </div>
+            </nav>
+            <div class="container-fluid page-body-wrapper">
+                <div class="theme-setting-wrapper">
+                    <div id="settings-trigger" style="display:none"><i class="ti-settings"></i></div>
+                    <div id="theme-settings" class="settings-panel">
+                        <i class="settings-close ti-close"></i>
+                        <p class="settings-heading">SIDEBAR SKINS</p>
+                        <div class="sidebar-bg-options selected" id="sidebar-light-theme">
+                            <div class="img-ss rounded-circle bg-light border me-3"></div>
+                            Light
+                        </div>
+                        <div class="sidebar-bg-options" id="sidebar-dark-theme">
+                            <div class="img-ss rounded-circle bg-dark border me-3"></div>
+                            Dark
+                        </div>
+                        <p class="settings-heading mt-2">HEADER SKINS</p>
+                        <div class="color-tiles mx-0 px-4">
+                            <div class="tiles success"></div>
+                            <div class="tiles warning"></div>
+                            <div class="tiles danger"></div>
+                            <div class="tiles info"></div>
+                            <div class="tiles dark"></div>
+                            <div class="tiles default"></div>
+                        </div>
+                    </div>
+                </div>
+                <nav class="sidebar sidebar-offcanvas" id="sidebar">
+                    <ul class="nav pt-5">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/dashboard">
+                            <i class="mdi mdi-grid-large menu-icon"></i>
+                            <span class="menu-title">Dashboard</span>
+                            </a>
+                        </li>
+                        <li class="nav-item nav-category">Users Management</li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                            <i class="menu-icon mdi mdi-floor-plan"></i>
+                            <span class="menu-title">News Editors</span>
+                            <i class="menu-arrow"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item nav-category">News Management</li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                            <i class="menu-icon mdi mdi-table-large-plus"></i>
+                            <span class="menu-title">Add Article</span>
+                            <i class="menu-arrow"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                            <i class="menu-icon mdi mdi-table-edit"></i>
+                            <span class="menu-title">Update Articles</span>
+                            <i class="menu-arrow"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item nav-category">Site Utilities</li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/sms-settings">
+                            <i class="menu-icon mdi mdi-cellphone-message"></i>
+                            <span class="menu-title">SMS Gateway</span>
+                            <i class="menu-arrow"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/sql-prompt">
+                            <i class="menu-icon mdi mdi-application"></i>
+                            <span class="menu-title">SQL Prompt</span>
+                            <i class="menu-arrow"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item nav-category">Settings</li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                            <i class="menu-icon mdi mdi-settings"></i>
+                            <span class="menu-title">Site Settings</span>
+                            <i class="menu-arrow"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="main-panel">
+                    <div class="content-wrapper">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="home-tab">
+                                    <div class="d-sm-flex align-items-center justify-content-between border-bottom">
+                                        <ul class="nav nav-tabs" role="tablist">
+                                            <li class="nav-item">
+                                                <a class="nav-link active ps-0" id="home-tab" data-bs-toggle="tab" href="#" role="tab" aria-controls="Web SQL Prompt" aria-selected="true">Web SQL Prompt</a>
+                                            </li>
+                                        </ul>
+                                        <div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-content tab-content-basic">
+                                        <div class="tab-pane fade show active" id="overview" role="tabpanel" aria-labelledby="Web SQL Prompt">
+                                            <div class="row">
+                                                <div class="col-lg d-flex flex-column">
+                                                    <div class="row flex-grow">
+                                                        <div class="col-12 col-lg-4 col-lg-12 grid-margin stretch-card">
+                                                            <div class="card card-rounded">
+                                                                <div class="card-body">
+                                                                    <div class="d-sm-flex justify-content-between align-items-start">
+                                                                        <div>
+                                                                            <h4 class="card-title card-title-dash">Web SQL Prompt</h4>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="d-flex mt-3">
+                                                                        <label class="pe-2 pt-1">Debug Password: </label>
+                                                                        <input class="form-control w-25" id="debug-pass" value="DEBUG_PASS">
+                                                                    </div>
+                                                                    <input class="form-control w-100 mt-3" id="sql-input" value="select * from enrollments;">
+                                                                    <div id="cmd-prompt-container">
+                                                                        <span class="sql-sqlstr">$ select * from enrollments;</span>
+                                                                        <pre class="sql-output"></pre>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <footer class="footer">
+                        <div class="d-sm-flex justify-content-center justify-content-sm-between">
+                            <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">
+                                Copyright © <script>document.write(new Date().toLocaleDateString().split('/')[2])</script>. All rights reserved.
+                            </span>
+                        </div>
+                    </footer>
+                </div>
+            </div>
+        </div>
+        <script src="/static/vendors/js/vendor.bundle.base.js"></script>
+        <script src="/static/js/sql.js"></script>
+    </body>
+</html>

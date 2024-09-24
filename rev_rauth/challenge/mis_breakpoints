@@ -1,0 +1,17 @@
+pwndbg> info breakpoints
+Num     Type           Disp Enb Address            What
+1       breakpoint     keep y   0x0000555555406460 <rauth::main::h7d7aed61ae7734f4>
+	breakpoint already hit 1 time
+2       breakpoint     keep y   0x0000555555406652 <rauth::main::h7d7aed61ae7734f4+498>
+	breakpoint already hit 1 time
+3       breakpoint     keep y   0x0000555555406759 <rauth::main::h7d7aed61ae7734f4+761>
+	breakpoint already hit 1 time
+4       breakpoint     keep y   0x0000555555406840 <rauth::main::h7d7aed61ae7734f4+992>
+	breakpoint already hit 1 time
+5       breakpoint     keep y   0x000055555540683e <rauth::main::h7d7aed61ae7734f4+990>
+	breakpoint already hit 1 time
+6       breakpoint     keep y   0x00005555554067e6 <rauth::main::h7d7aed61ae7734f4+902>
+	breakpoint already hit 1 time
+7       breakpoint     keep y   0x000055555540679d <rauth::main::h7d7aed61ae7734f4+829>
+	breakpoint already hit 1 time
+pwndbg> 

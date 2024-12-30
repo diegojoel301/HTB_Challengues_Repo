@@ -8,7 +8,7 @@ elf = context.binary = ELF("./el_mundo")
 
 def start():
     if args.REMOTE:
-        return remote("hidden.ctf.intigriti.io", 1337)
+        return remote("83.136.254.158", 49964)
         #return remote("127.0.0.1", 1027)
     else:
         if args.GDB:

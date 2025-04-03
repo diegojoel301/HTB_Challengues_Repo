@@ -1,0 +1,15 @@
+<iframe id='miIframe' src="http://192.168.159.130:1337/api/admin/users">
+
+</iframe>
+
+<script>
+    const iframe = document.getElementById('miIframe');
+
+    // Acceder al contenido del iframe
+    const contenidoIframe = iframe.contentDocument || iframe.contentWindow.document;
+
+    // Obtener el HTML del iframe
+    const htmlIframe = contenidoIframe.documentElement.outerHTML;
+
+    console.log(htmlIframe);
+</script>

